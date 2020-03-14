@@ -6,6 +6,8 @@ This repository is an implementation of the ["Munchkin"](<https://en.wikipedia.o
 
 It is created mainly for self-educational purposes and contains a lot of overengeening, which might be not relevant for the application of this size.
 
+**Warning: This is not a complete version, WIP**
+
 ## Requirements
 
 - Node.js 12+
