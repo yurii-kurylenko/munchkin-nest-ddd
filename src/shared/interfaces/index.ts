@@ -1,0 +1,14 @@
+export { Targetable } from "./targetable.interface";
+export { CardConvertable } from "./card-convertable.interface";
+export { Card } from "./card.interface";
+export { Curse } from "./curse.interface";
+export { Round } from "./round.interface";
+export { Repository } from "./repository.interface";
+export { Monster } from "./monster.interface";
+export { Munchkin } from "./munchkin.interface";
+export { Equipment } from "./equipment.interface";
+export { Buffable } from "./buffable.interface";
+export { RoundState } from "./round-state.interface";
+export { Combat } from "./combat.interface";
+export { CardOwner } from "./card-owner.interface";
+export { Poison } from "./poison.interface";
