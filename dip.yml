@@ -1,0 +1,19 @@
+version: "4.2"
+
+environment:
+  NODE_ENV: development
+
+compose:
+  files:
+    - docker-compose.yml
+
+interaction:
+  bash:
+    service: api
+    command: /bin/bash
+    compose_run_options: [no-deps, service-ports]
+
+  npm:
+    service: api
+    command: npm
+    # compose_run_options: [no-deps]

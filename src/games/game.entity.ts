@@ -52,7 +52,7 @@ export class Game extends Entity<GameProps> {
     this.props.playerIds.push(playerId);
   }
 
-  constructor(props: GameProps, id?: string) {
+  private constructor(props: GameProps, id?: string) {
     super(props, id);
   }
 

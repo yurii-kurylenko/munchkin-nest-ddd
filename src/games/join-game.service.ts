@@ -12,6 +12,7 @@ export class JoinGameService {
   ) { }
 
   async exec(params: JoinGameInput): Promise<Game> {
+ 
     const game = await this.gamesRepository.find(params.gameId);
 
     const userExists = await this.usersRepository.exists(params.userId);

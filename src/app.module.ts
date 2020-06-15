@@ -11,7 +11,7 @@ mongoose.set("debug", true);
 
 @Module({
   imports: [
-    MongooseModule.forRoot("mongodb://localhost/nest"),
+    MongooseModule.forRoot(process.env['DB_URI']),
     GraphQLModule.forRoot({
       autoSchemaFile: "schema.gql",
     }),

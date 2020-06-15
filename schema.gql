@@ -29,7 +29,7 @@ input JoinGameInput {
 type Mutation {
   createGame(createGameData: CreateGameInput!): Game!
   joinGame(JoinGameData: JoinGameInput!): Game!
-  createUser(createGameData: CreateUserInput!): User!
+  createUser(createUserData: CreateUserInput!): User!
 }
 
 type Query {

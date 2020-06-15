@@ -38,7 +38,7 @@ export class GamesRepository extends AbstractMongooseRepository<Game, GameDocume
   buildDocumentFromEntity(entity: Game): GameDocument {
     const snapshot = entity.getSnapshot();
     return {
-      _id: snapshot.id,
+      id: snapshot.id,
       title: snapshot.title,
       status: snapshot.status,
       playerIds: snapshot.playerIds,

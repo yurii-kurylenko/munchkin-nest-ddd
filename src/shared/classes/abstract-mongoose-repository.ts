@@ -1,5 +1,6 @@
 import { Document, Model } from "mongoose";
 import { Repository } from "../interfaces";
+import { Entity } from "./entity";
 
 export abstract class AbstractMongooseRepository<E, D extends Document> implements Repository<E> {
   protected documentModel: Model<D>;
@@ -26,7 +27,8 @@ export abstract class AbstractMongooseRepository<E, D extends Document> implemen
   find(id: string): Promise<E> {
     return this.documentModel
       .findById(id)
-      .then(doc => this.buildEntityFromDocument(doc));
+      .orFail()
+      .then(doc => this.buildEntityFromDocument(doc))
   }
 
   exists(id: string): Promise<boolean> {
@@ -35,7 +37,10 @@ export abstract class AbstractMongooseRepository<E, D extends Document> implemen
 
   update(entity: E): Promise<E> {
     const doc = this.buildDocumentFromEntity(entity);
-    return doc.save().then(_ => entity);
+    console.log(doc);
+    // return new this.documentModel(this.buildDocumentFromEntity(entity))
+    return this.documentModel.updateOne({ _id: entity.id }, doc).then(_ => entity);
+    // return doc.save().then(_ => entity);
   }
 
   delete(id: string): Promise<E> {
