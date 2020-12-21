@@ -1,6 +1,6 @@
 import { Entity } from "src/shared";
 import { Deck, DoorCard, TreasureCard } from "src/cards";
-import { ObjectType, Field } from "type-graphql";
+import { ObjectType, Field } from "@nestjs/graphql";
 
 export enum GameStatus {
   Pending,

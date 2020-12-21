@@ -32,15 +32,15 @@ export abstract class AbstractMongooseRepository<E, D extends Document> implemen
   }
 
   exists(id: string): Promise<boolean> {
-    return this.documentModel.exists({ _id: id });
+    return Promise.resolve(true);
   }
 
   update(entity: E): Promise<E> {
     const doc = this.buildDocumentFromEntity(entity);
-    console.log(doc);
     // return new this.documentModel(this.buildDocumentFromEntity(entity))
-    return this.documentModel.updateOne({ _id: entity.id }, doc).then(_ => entity);
+    // return this.documentModel.updateOne({ _id: entity.id }, doc).then(_ => entity);
     // return doc.save().then(_ => entity);
+    return Promise.resolve(entity);
   }
 
   delete(id: string): Promise<E> {
