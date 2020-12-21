@@ -8,14 +8,14 @@ import { CreateGameService } from "./create-game.service";
 import { UsersModule } from "src/users/users.module";
 import { JoinGameService } from "./join-game.service";
 import { StartGameService } from './start-game.service';
-import { RoundsModule } from './rounds/rounds.module';
+// import { RoundsModule } from './rounds/rounds.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: "GameDocument", schema: GameDocumentSchema }]),
     CardsModule,
     UsersModule,
-    RoundsModule,
+    // RoundsModule,
   ],
   controllers: [],
   providers: [GamesRepository, CreateGameService, JoinGameService, StartGameService, GamesResolver],

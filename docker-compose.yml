@@ -10,7 +10,7 @@ services:
     - .:/app
     links:
     - db
-    environment: 
+    environment:
         DB_URI: "mongodb://db/munchkin"
   db:
     image: mongo:4-bionic
