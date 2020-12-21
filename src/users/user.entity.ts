@@ -1,5 +1,5 @@
 import { Entity } from "src/shared";
-import { ObjectType, Field } from "@nestjs/graphql";
+import { ObjectType,  Field } from "@nestjs/graphql";
 
 export interface UserProps {
   email: string;

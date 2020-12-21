@@ -17,3 +17,8 @@ interaction:
     service: api
     command: npm
     # compose_run_options: [no-deps]
+
+  test:
+    service: api
+    command: npm run test
+    # compose_run_options: [no-deps]

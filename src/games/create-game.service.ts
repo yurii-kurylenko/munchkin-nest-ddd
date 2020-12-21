@@ -11,7 +11,7 @@ export class CreateGameService {
     private readonly gamesRepository: GamesRepository,
     private readonly usersRepository: UsersRepository,
     private readonly cardsService: CardsService,
-  ) { }
+  ) {}
 
   async exec(params: CreateGameInput): Promise<Game> {
     // TODO: Replace with bulk query

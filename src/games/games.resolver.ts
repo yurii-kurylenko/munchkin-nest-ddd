@@ -25,12 +25,12 @@ export class GamesResolver {
   }
 
   @Mutation(returns => Game!)
-  createGame(@Args("createGameData") createGameData: CreateGameInput): Promise<Game> {
+  createGame(@Args('createGameData') createGameData: CreateGameInput): Promise<Game> {
     return this.createGameService.exec(createGameData);
   }
 
   @Mutation(returns => Game!)
-  joinGame(@Args("JoinGameData") joinGameData: JoinGameInput): Promise<Game> {
+  joinGame(@Args('JoinGameData') joinGameData: JoinGameInput): Promise<Game> {
     return this.joinGameService.exec(joinGameData);
   }
 

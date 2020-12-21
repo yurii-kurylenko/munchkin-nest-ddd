@@ -5,15 +5,13 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { GamesModule } from "./games/games.module";
 import { GraphQLModule } from "@nestjs/graphql";
 import { UsersModule } from './users/users.module';
-
-import * as mongoose from "mongoose";
-mongoose.set("debug", true);
+import { join } from "path";
 
 @Module({
   imports: [
     MongooseModule.forRoot(process.env['DB_URI']),
     GraphQLModule.forRoot({
-      autoSchemaFile: "schema.gql",
+      autoSchemaFile: join(process.cwd(), 'src/graphql.gql')
     }),
     GamesModule,
     UsersModule,
